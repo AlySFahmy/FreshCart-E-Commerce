@@ -32,7 +32,7 @@ let validationSchema=Yup.object({
   name:Yup.string().min(3,"name must be more than 3").max(15,"name must be less than 15").required("name is required"),
   email:Yup.string().email("email format  is not valid").required("Email is required"),
   phone:Yup.string().matches(phoneRegExp,"Phone is not Valid").required("Phone is required"),
-  password:Yup.string().matches(/^[A-Z][a-z0-9]{5,25}/,"password is not Valid").required("password is required"),
+  password:Yup.string().matches(/^[A-Z][a-zA-Z0-9]{5,}$/,"Enter first letter uppercase then at least 5 characters...").required("password is required"),
   rePassword:Yup.string().oneOf([Yup.ref("password")],"Re-password is not equal to the password ").required("password is not Valid"),
 })
 
