@@ -37,7 +37,7 @@ export default function Login() {
 
 let validationSchema=Yup.object({
   email:Yup.string().email("email format  is not valid").required("Email is required"),
-  password:Yup.string().matches(/^[A-Z][a-z0-9]{5,25}/,"password is not Valid").required("password is required"),
+  password:Yup.string().matches(/^[A-Z][a-z0-9]{5,25}/,"password is not Valid").required("password with a first letter in uppercase then at least 5 chatacters is required"),
 })
 
 
