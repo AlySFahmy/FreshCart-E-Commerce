@@ -37,7 +37,7 @@ export default function Login() {
 
 let validationSchema=Yup.object({
   email:Yup.string().email("email format  is not valid").required("Email is required"),
-  password:Yup.string().matches(/^[A-Z][a-z0-9]{5,25}/,"password is not Valid").required("password with a first letter in uppercase then at least 5 chatacters is required"),
+  password:Yup.string().matches(/^[A-Z][a-z0-9]{5,25}/,"Enter a password with a first letter in uppercase then at least 5 characters").required("password is required"),
 })
 
 
@@ -89,7 +89,7 @@ className=' form-control'
   id='Password'
 
 />
-<h6 className='text-main my-1 cursor-pointer' onClick={()=>ForgetPassword()}>forget Password?  </h6>
+<h6 className='text-main my-1 cursor-pointer' onClick={()=>ForgetPassword()}>forgot Password?  </h6>
 {formik.errors.password &&formik.touched.password? <div className='alert alert-danger'>{formik.errors.password}</div>:""}
 
 
